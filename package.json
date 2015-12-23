@@ -1,0 +1,31 @@
+{
+  "jspm": {
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-beta.0",
+      "angular2-phoenix-channels": "npm:angular2-phoenix-channels@^0.0.1",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "rxjs": "npm:rxjs@^5.0.0-beta.0",
+      "testdouble/testdouble.js": "github:testdouble/testdouble.js@^0.7.3",
+      "zone.js": "npm:zone.js@^0.5.8"
+    },
+    "devDependencies": {
+      "chai": "npm:chai@^3.4.1",
+      "jspm-testem": "github:OrKoN/jspm-testem@master",
+      "lodash": "npm:lodash@^3.10.1",
+      "mocha": "npm:mocha@^2.3.4",
+      "typescript": "npm:typescript@^1.6.2"
+    },
+    "overrides": {
+      "github:OrKoN/jspm-testem@master": {
+        "dependencies": {
+          "mocha": "*",
+          "chai": "*",
+          "lodash": "*"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.0"
+  }
+}

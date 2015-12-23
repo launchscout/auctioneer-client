@@ -1,0 +1,9 @@
+{
+  "src_files": [
+    "app/*spec.ts"
+  ],
+  "test_page": "test-runner.mustache",
+  "launch_in_ci": [
+    "PhantomJS"
+  ]
+}
