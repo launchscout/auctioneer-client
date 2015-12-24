@@ -1,15 +1,13 @@
-import { bootstrap } from "angular2/platform/browser";
 import { Component, CORE_DIRECTIVES, FORM_DIRECTIVES, provide } from "angular2/core";
 import BidService from "./bid_service";
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import PhoenixChannels from "angular2-phoenix-channels";
 
 @Component({
   templateUrl: "app/auction-bid.html",
   selector: "auction-bid",
   providers: [BidService]
 })
-class App {
+class AuctionBid {
   constructor(bidService: BidService) {
     this.newBid = {amount: 0};
     this.bidService = bidService;
@@ -27,8 +25,4 @@ class App {
   }
 }
 
-let phoenixChannelsProvider = provide(PhoenixChannels, { useFactory: () => {
-  return new PhoenixChannels("ws://localhost:4000/socket");
-} });
-
-bootstrap(App, [HTTP_PROVIDERS, phoenixChannelsProvider]);
+export default AuctionBid;
