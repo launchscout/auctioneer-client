@@ -1,8 +1,8 @@
-# Things
+# Auctioneer Client
 
-This is the client side repo for a small proof of concept app with an angular2
-front end and a phoenix backend. You'll need to have the [server](http://github.com/gaslight/thing_server) side app up
-and running on port 4000 or else chage app/app.ts accordingly.
+This is the client side repo for the Auctioneer example app of a Codemash 2016 talk: "Low Ceremony Microservices with Elixir".
+You'll need to have the [server](http://github.com/gaslight/auctioneer) side app up
+and running on port 4000 or else chage app/auction-app.ts accordingly.
 
 To get the client side up and running:
 
