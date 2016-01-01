@@ -26,7 +26,11 @@ class BidService {
     return this.http.post('http://localhost:4000/api/bids',
       JSON.stringify({bid: bid}),
       {headers: headers}
-    ).map(res => res.json());
+    )
+    .map(res => res.json())
+    .catch(error => {
+      return Observable.throw(error.json());
+    });
   }
 }
 

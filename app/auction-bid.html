@@ -8,7 +8,7 @@
       <div class="type--small-heading ng-binding">Tue ~ Dec 29, 2015 @ 8:00 PM</div>
     </div>
   </div>
-  <div class="bid bid--winning" ng-class="{&#39;bid--winning&#39;: isWinning(), &#39;bid--losing&#39;: isLosing()}">
+  <div class="bid" [class.bid--winning]="winning()" [class.bid--losing]="losing()">
     <div class="row" ng-show="item.hasBids()">
       <div class="col-md-12" ng-switch="" on="bidStatus()">
         <!-- ngSwitchWhen: winning -->
@@ -49,12 +49,13 @@
                       <a class="bid-message__link" data-keyboard="true" data-target=".max-bid-wrap.modal" data-toggle="modal" href="https://www.secondstoryauctions.com/#">Learn More &gt;</a>
                     </div>
                   </div>
-                  <div ng-show="currentUser" class="">
+                  <div ng-show="currentUser" class="form-group" [class.has-error]="error">
                     <div class="input-group" ng-class="{&#39;bid__input-group--error&#39;: isInvalid()}">
                       <span class="input-group-addon">$</span>
                       <input class="bid__bid-amount form-control ng-pristine ng-untouched ng-valid" id="amount" name="amount" [(ngModel)]="newBid.amount" number-mask="true" type="text" />
                       <span class="input-group-addon">.00</span>
                     </div>
+                    <span *ngIf="error">This bid is too small</span>
                     <div class="bid-message soft-push--bottom" ng-show="currentUser">
                       <div class="bid-message__description" ng-class="{&#39;bid__minimum--error&#39;: bid.isTooLow()}">
                         Bid
