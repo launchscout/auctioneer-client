@@ -1,13 +1,4 @@
 <div class="col-md-4 bid-container ng-scope" ng-controller="BidController" ng-hide="loading">
-  <div class="row bid-container__time">
-    <div class="col-md-3">
-      <div class="auction-item-detail__label">Time Left:</div>
-    </div>
-    <div class="col-md-9">
-      <div class="auction_item--ends_at time-remaining ng-binding" item="item" request-closes-in="true">6 days</div>
-      <div class="type--small-heading ng-binding">Tue ~ Dec 29, 2015 @ 8:00 PM</div>
-    </div>
-  </div>
   <div class="bid" [class.bid--winning]="winning()" [class.bid--losing]="losing()">
     <div class="row" ng-show="item.hasBids()">
       <div class="col-md-12" ng-switch="" on="bidStatus()">
@@ -19,18 +10,13 @@
       <div class="col-md-3 col-sm-12">
         <div class="bid__label">Current Bid:</div>
       </div>
-      <div class="col-md-5 col-xs-8">
+      <div class="col-md-5 col-xs-12">
         <div class="bid__current-bid ng-binding">$ {{maxBid?.amount}}</div>
-      </div>
-      <div class="col-md-4 col-xs-4">
-        <a class="display-bid-history bid__bid-history" data-keyboard="true" data-target=".bid-history-wrap.modal" data-toggle="modal" href="https://www.secondstoryauctions.com/#">
-          <ng-pluralize count="item.bidsCount()" when="{&#39;0&#39;: &#39;No bids&#39;, &#39;1&#39;: &#39;1 Bid&#39;, &#39;other&#39;: &#39;{} Bids&#39;}">20 Bids</ng-pluralize>
-        </a>
       </div>
     </div>
     <div class="row bid-container__bid" ng-show="item.isOpen()">
       <div class="col-md-3 col-sm-12">
-        <div class="bid__label">Place Max Bid:</div>
+        <div class="bid__label">Bid Amount:</div>
       </div>
       <div class="col-md-9">
         <div class="bid__field-wrap">
@@ -44,10 +30,6 @@
                       <strong class="ng-binding">$</strong>.
                       <a class="bid-message__link" data-keyboard="true" data-target=".max-bid-wrap.modal" data-toggle="modal" href="https://www.secondstoryauctions.com/#">Learn More &gt;</a>
                     </div>
-                    <div class="bid-message__description" ng-hide="item.hasBid(currentUser)">
-                      We’ll place bids automatically up to your max bid
-                      <a class="bid-message__link" data-keyboard="true" data-target=".max-bid-wrap.modal" data-toggle="modal" href="https://www.secondstoryauctions.com/#">Learn More &gt;</a>
-                    </div>
                   </div>
                   <div ng-show="currentUser" class="form-group" [class.has-error]="error">
                     <div class="input-group" ng-class="{&#39;bid__input-group--error&#39;: isInvalid()}">
@@ -56,17 +38,10 @@
                       <span class="input-group-addon">.00</span>
                     </div>
                     <span *ngIf="error">This bid is too small</span>
-                    <div class="bid-message soft-push--bottom" ng-show="currentUser">
-                      <div class="bid-message__description" ng-class="{&#39;bid__minimum--error&#39;: bid.isTooLow()}">
-                        Bid
-                        <strong class="ng-binding"> $95 </strong> or more.
-                      </div>
-                      <a class="bid-message__link" data-keyboard="true" data-target=".bid-minimum-wrap.modal" data-toggle="modal" href="https://www.secondstoryauctions.com/#">Why this much? &gt;</a>
-                    </div>
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-7 bid__field__submission">
-                  <button class="btn--medium btn--action full-width ng-binding" (click)="addBid()">Place Max Bid</button>
+                  <button class="btn--medium btn--action full-width ng-binding" (click)="addBid()">Place Bid</button>
                   <div class="soft-push--top ng-scope" ng-controller="FollowCtrl" ng-show="currentUser">
                     <button class="btn--medium btn--base-lt full-width" ng-click="followClick(item)">
                       <i class="fa fa-star ng-binding">Follow Item</i>
