@@ -1,4 +1,8 @@
 {
+  "name": "auctioneer-client",
+  "scripts": {
+    "start": "live-server ."
+  },
   "jspm": {
     "dependencies": {
       "angular2": "npm:angular2@^2.0.0-beta.0",
@@ -26,6 +30,7 @@
     }
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.0"
+    "angular2": "2.0.0-beta.0",
+    "live-server": "^1.0.0"
   }
 }
